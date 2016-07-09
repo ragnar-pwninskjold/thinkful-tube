@@ -29,7 +29,7 @@ function getRequest(searchTerm){
 function showResults(results){
   var html = "";
   $.each(results, function(index,value){
-    html += '<img src="' + value + '">' + '</img>';
+    html += '<img id="resultpics" src="' + value + '">' + '</img>';
     console.log(value.Title);
   });
   $('#search-results').html(html);

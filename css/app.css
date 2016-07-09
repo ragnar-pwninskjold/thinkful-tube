@@ -49,6 +49,10 @@ margin-bottom: 0;
   margin-bottom: 5%;
 }
 
-#search-results p {
-  clear: both;
+
+img {
+  display: inline-block;
+  text-align: center;
+  height: 140px;
+  width: 160px;
 }
