@@ -1,0 +1,54 @@
+body {
+  color: #222222;
+  font-size: 1em;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0px;
+}
+
+.masthead {
+  padding-bottom: 6em;
+  border-top: solid .5em #ff4000;
+  border-bottom: solid .5em #ff4000;
+  color: #EB5937;
+  height: 50px;
+}
+
+.masthead-intro {
+  font-family: "Gentium Book Basic", Georgia, serif;
+  font-size: 2em;
+  text-align: center;
+  display: inline-block;
+  margin-left: 33%;
+  margin-top: 3.9%;
+  color: blue;
+}
+
+.masthead-heading {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 3em;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-shadow: 1px 0px 1px black, 145px 39px 9px black;
+  text-align: center;
+  margin-top: 0;
+  display: inline-block;
+  color: red;
+}
+
+#search-term {
+float: left;
+margin-top: 10%;
+margin-left: 43%;
+margin-bottom: 0;
+}
+
+#query {
+  float: left;
+  margin: 0 auto;
+  clear: both;
+  margin-bottom: 5%;
+}
+
+#search-results p {
+  clear: both;
+}
