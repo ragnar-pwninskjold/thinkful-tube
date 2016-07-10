@@ -38,8 +38,9 @@ body {
 #search-term {
 float: left;
 margin-top: 10%;
-margin-left: 43%;
 margin-bottom: 0;
+width: 90%;
+margin-left: 40%;
 }
 
 #query {
@@ -55,4 +56,15 @@ img {
   text-align: center;
   height: 140px;
   width: 160px;
+  float: left;
+  margin: 0 auto;
+  margin-left: 6%;
+}
+
+#search-results {
+ display: block;
+ height: 250px;
+ width: 90%;
+ margin: 0 auto;
+ margin-top: 225px;
 }
