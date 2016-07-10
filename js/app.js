@@ -18,18 +18,24 @@ function getRequest(searchTerm){
 
   $.getJSON(url, params, function(data){
     var tNails = [];
+    var vidId = [];
     for (i=0;i<data.items.length;i++) {
-    tNails.push(data.items[i].snippet.thumbnails.default.url);
+    if (data.items[i].id.kind == "youtube#video") {
+      tNails.push(data.items[i].snippet.thumbnails.default.url);
+      vidId.push(data.items[i].id.videoId);
     }
+    
+   }
     console.log(tNails);
-    showResults(tNails);
+    console.log(vidId);
+    showResults(tNails, vidId);
   });
 }
 
-function showResults(results){
+function showResults(results, vidId){
   var html = "";
   $.each(results, function(index,value){
-    html += '<img id="resultpics" src="' + value + '">' + '</img>';
+    html += '<a href="https://www.youtube.com/watch?v='+ vidId +'">'+'<img id="resultpics" src="' + value + '">' + '</img></a>';
     console.log(value.Title);
   });
   $('#search-results').html(html);
