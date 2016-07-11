@@ -8,19 +8,22 @@ $(document).ready(function(){
   });
 
   $("#next-page button").on("click", function() {
-
-    alert("button selected");
-
+    var searchTerm = $('#query').val();
+    getRequest(searchTerm, nextPage);
   });
 });
 
-function getRequest(searchTerm){
+
+
+function getRequest(searchTerm, token){
   var params = {
     q: searchTerm,
     r: 'json',
     part: "snippet",
     key: "AIzaSyD9wxv7MzUhEGVhywAsepSitP1CRIWS-3k",
-    maxResults: 10
+    maxResults: 10,
+    pageToken: token
+
   };
   url = 'https://www.googleapis.com/youtube/v3/search';
 
@@ -33,22 +36,24 @@ function getRequest(searchTerm){
       tNails.push(data.items[i].snippet.thumbnails.default.url);
       vidId.push(data.items[i].id.videoId);
       channel.push(data.items[i].snippet.channelId);
+      nextPage = data.nextPageToken;
+      console.log(nextPage);
+      showResults(tNails, vidId, channel);
     }
     
    }
+
     console.log(tNails);
     console.log(vidId);
     console.log(channel);
     console.log(data);
-    showResults(tNails, vidId, channel);
   });
 }
 
 function showResults(results, vidId, cId){
   var html = "";
   $.each(results, function(index,value){
-    html += '<a href="https://www.youtube.com/watch?v='+ vidId +'">'+'<img id="resultpics" src="' + value + '">' + '</img></a>' + '<a href="https://www.youtube.com/channel/' + cId + '">Click Here for More From This Channel</a>';
-    console.log(value);
+    html += '<div class="result-item"><a href="https://www.youtube.com/watch?v='+ vidId[index] +'">'+'<img id="resultpics" src="' + value + '">' + '</a>' + '<a href="https://www.youtube.com/channel/' + cId[index] + '">Click Here for More From This Channel</a></div>';
   });
   $('#search-results').html(html);
 }

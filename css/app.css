@@ -41,7 +41,7 @@ body {
 
 #search-term {
 float: left;
-margin-top: 10%;
+margin-top: 10px;
 margin-bottom: 0;
 width: 90%;
 margin-left: 40%;
@@ -51,24 +51,33 @@ margin-left: 40%;
   float: left;
   margin: 0 auto;
   clear: both;
-  margin-bottom: 5%;
+  margin-bottom: 5px;
 }
 
 
 img {
-  display: inline-block;
+  display: block;
   text-align: center;
-  height: 140px;
+  width: 160px;
+}
+
+.result-item {
+
   width: 160px;
   float: left;
-  margin: 0 auto;
-  margin-left: 6%;
+  margin-right: 20px;
+
 }
 
 #search-results {
  display: block;
- height: 250px;
  width: 90%;
- margin: 0 auto;
+ margin: 0 5%;
  margin-top: 225px;
+}
+
+#next-page {
+
+  clear: both;
+
 }
